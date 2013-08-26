@@ -2,6 +2,8 @@ Nedjer::Application.routes.draw do
   # get "/users/:id", to: 'users#show', as: 'show_user'
   resources :users
   delete 'users/:id', :to => 'users#destroy', as: 'destroy_user'
+
+  get '/posts', :to => 'posts#index', as: 'all_posts'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
