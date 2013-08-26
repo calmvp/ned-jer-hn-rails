@@ -1,7 +1,7 @@
 Nedjer::Application.routes.draw do
   # get "/users/:id", to: 'users#show', as: 'show_user'
   get '/login', :to => 'sessions#new'
-  post '/login', :to => 'sessions#create'
+  post '/login', :to => 'sessions#create', as: 'login'
   delete '/logout', :to => 'sessions#destroy', :via => :delete
 
   resources :users
