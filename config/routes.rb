@@ -7,9 +7,10 @@ Nedjer::Application.routes.draw do
   resources :users
   delete 'users/:id', :to => 'users#destroy', as: 'destroy_user'
 
-  get '/posts/:id', :to => 'posts#show', as: 'show_post'
   get '/posts', :to => 'posts#index', as: 'all_posts'
-  get '/posts/new', :to => 'posts#new', as: 'new_post'
+  get '/posts/new', :to => 'posts#new', as: 'post_form'
+  post '/posts', :to => 'posts#create', as: 'new_post'
+  get '/posts/:id', :to => 'posts#show', as: 'show_post'
   # resources :posts
   # The priority is based upon order of creation:
   # first created -> highest priority.
