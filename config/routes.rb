@@ -4,6 +4,8 @@ Nedjer::Application.routes.draw do
   delete 'users/:id', :to => 'users#destroy', as: 'destroy_user'
 
   get '/posts', :to => 'posts#index', as: 'all_posts'
+  get '/post/:id', :to => 'posts#show', as: 'show_post'
+  # resources :posts
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -53,7 +55,7 @@ Nedjer::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+    root :to => 'posts#index'
 
   # See how all your routes lay out with "rake routes"
 
