@@ -5,7 +5,7 @@
 #   gem 'sqlite3'
 development:
   adapter: postgresql
-  database: nedjer_development#db/development.postgresql
+  database: nedjer_development
   pool: 5
   timeout: 5000
 
@@ -19,7 +19,7 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
+  adapter: postgresql
   database: nedjer_production
   pool: 5
   timeout: 5000
