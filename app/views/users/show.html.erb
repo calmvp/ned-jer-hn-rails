@@ -1,1 +1,6 @@
 <h1>Hello there, <%= @user.name %>!</h1>
+<%= link_to 'New Post', post_form_path %>
+
+<% @user.posts.each do |post| %>
+<%= link_to post.title, show_post_path(post) %>
+<% end %>

@@ -1,0 +1,4 @@
+<%= form_for @comment, url: { action: 'create'} do |f| %>
+    <%= f.text_field :body %>
+    <%= f.submit "New Comment" %>
+<% end %>

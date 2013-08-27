@@ -1,3 +1,13 @@
 <h1><%= @post.title %></h1>
 
 <p><%= @post.body %></p>
+
+<ul><% @post.comments.each do |comment| %>
+  <li><%= comment.body %></li>
+<% end %></ul>
+
+<%= form_for (@post.comments.build), url: "/comments" do |f| %>
+    <%= f.text_field :body %>
+    <%= f.hidden_field :post_id, :value => @post.id %>
+    <%= f.submit %>
+<% end %>
