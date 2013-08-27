@@ -5,12 +5,17 @@ Nedjer::Application.routes.draw do
   delete '/logout', :to => 'sessions#destroy', :via => :delete
 
   resources :users
-  delete 'users/:id', :to => 'users#destroy', as: 'destroy_user'
+  # delete 'users/:id', :to => 'users#destroy', as: 'destroy_user'
 
+  resources :posts
   get '/posts', :to => 'posts#index', as: 'all_posts'
   get '/posts/new', :to => 'posts#new', as: 'post_form'
   post '/posts', :to => 'posts#create', as: 'new_post'
   get '/posts/:id', :to => 'posts#show', as: 'show_post'
+
+  get '/comments/new', :to => 'comments#new', as: 'comment_form'
+  post '/comments', :to => 'comments#create', as: 'new_comment'
+
   # resources :posts
   # The priority is based upon order of creation:
   # first created -> highest priority.
